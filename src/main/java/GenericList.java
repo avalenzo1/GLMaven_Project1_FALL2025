@@ -16,7 +16,14 @@ public abstract class GenericList<T> implements Iterable<T> {
     }
 
     public void print() {
-    //ttttt
+        if(length == 0) {
+            System.out.println("Empty List");
+        }
+        Node<T> temp = head;
+        while(temp != null) {
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
     }
 
     public abstract void add(T data);
@@ -24,15 +31,36 @@ public abstract class GenericList<T> implements Iterable<T> {
     public abstract T delete();
 
     public ArrayList<T> dumpList() {
+
+
         return null;
     }
 
     public T get( int index) {
-        return null;
+      Node<T> tempNode = head;
+        for(int i = 0; i < index; i++) {
+            if (tempNode == null) {
+                return null;
+            }
+
+            tempNode = tempNode.next;
+      }
+      return tempNode.data;
     }
 
     public T set( int index, T element) {
-        return null;
+        Node<T> tempNode = head;
+        for(int i = 0; i < index; i++) {
+            if (head == null) {
+                head.data = element;
+                return null;
+            }
+
+            head = head.next;
+        }
+        head.data = element;
+        return head.data;
+
     }
 
     public int getLength() {
@@ -40,15 +68,15 @@ public abstract class GenericList<T> implements Iterable<T> {
     }
 
     public void setLength(int length) {
-
+        this.length = length;
     }
 
     public Node<T> getHead() {
         return head;
     }
 
-    public void setHead(T head) {
-
+    public void setHead(Node<T> head) {
+        this.head = head;
     }
 
     public Iterator<T> descendingIterator() {
