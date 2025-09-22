@@ -1,5 +1,6 @@
 
-
+//Andrew Mcclendon 668607463 amccl22@uic.edu
+//Anthony Valenzo  667367644 avale3@uic.edu
 public class GLProject {
 
 	public static void main(String[] args) {
