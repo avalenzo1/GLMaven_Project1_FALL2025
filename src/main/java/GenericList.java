@@ -86,18 +86,27 @@ public abstract class GenericList<T> implements Iterable<T> {
         this.head = head;
     }
 
-
     public Iterator<T> descendingIterator() {
-
         Iterator<T> iterator = new Iterator<T>() {
+            private ArrayList<T> list = dumpList();
+            private int index = list.size() - 1;
+
             @Override
             public boolean hasNext() {
-                return false;
+                return index >= 0;
             }
 
             @Override
             public T next() {
-                return null;
+                T next = null;
+
+                if (index >= 0) {
+                    next = list.get(index);
+                }
+
+                index -= 1;
+
+                return next;
             }
         };
 
