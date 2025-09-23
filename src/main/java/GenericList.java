@@ -31,9 +31,15 @@ public abstract class GenericList<T> implements Iterable<T> {
     public abstract T delete();
 
     public ArrayList<T> dumpList() {
+        ArrayList<T> list = new ArrayList<>();
 
+        Node<T> temp = head;
+        while(temp != null) {
+            list.add(temp.data);
+            temp = temp.next;
+        }
 
-        return null;
+        return list;
     }
 
     public T get( int index) {
