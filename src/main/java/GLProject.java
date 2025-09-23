@@ -10,5 +10,6 @@ public class GLProject {
 		// TODO Auto-generated method stub
 		System.out.println("Welcome to project 1");
 
+        // TODO Test for both for loop and while loop
     }
 }

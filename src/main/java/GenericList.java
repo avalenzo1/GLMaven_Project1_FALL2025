@@ -19,6 +19,7 @@ public abstract class GenericList<T> implements Iterable<T> {
         if(length == 0) {
             System.out.println("Empty List");
         }
+
         Node<T> temp = head;
         while(temp != null) {
             System.out.println(temp.data);
@@ -44,7 +45,7 @@ public abstract class GenericList<T> implements Iterable<T> {
 
     public T get( int index) {
       Node<T> tempNode = head;
-        for(i nt i = 0; i < index; i++) {
+        for(int i = 0; i < index; i++) {
             if (tempNode == null) {
                 return null;
             }
@@ -85,8 +86,21 @@ public abstract class GenericList<T> implements Iterable<T> {
         this.head = head;
     }
 
+
     public Iterator<T> descendingIterator() {
 
-        return null;
+        Iterator<T> iterator = new Iterator<T>() {
+            @Override
+            public boolean hasNext() {
+                return false;
+            }
+
+            @Override
+            public T next() {
+                return null;
+            }
+        };
+
+        return iterator;
     }
 }
