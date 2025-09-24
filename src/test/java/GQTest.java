@@ -1,5 +1,5 @@
 public class GQTest {
     GQTest() {
-        System.out.println("GQTes`t");
+        System.out.println("GQTest");
     }
 }
