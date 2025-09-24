@@ -57,15 +57,15 @@ public abstract class GenericList<T> implements Iterable<T> {
 
     public T set( int index, T element) {
         Node<T> tempNode = head;
+
         for(int i = 0; i < index; i++) {
-            if (head == null) {
-                head.data = element;
+            if (tempNode == null) {
                 return null;
             }
 
-            head = head.next;
+            tempNode = tempNode.next;
         }
-        head.data = element;
+        tempNode.data = element;
         return head.data;
 
     }
