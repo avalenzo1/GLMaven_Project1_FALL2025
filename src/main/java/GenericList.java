@@ -55,7 +55,7 @@ public abstract class GenericList<T> implements Iterable<T> {
       return tempNode.data;
     }
 
-    public T set( int index, T element) {
+    public T set(int index, T element) {
         Node<T> tempNode = head;
         T oldElement = tempNode.data;
 
@@ -70,7 +70,6 @@ public abstract class GenericList<T> implements Iterable<T> {
         tempNode.data = element;
 
         return oldElement;
-
     }
 
     public int getLength() {
