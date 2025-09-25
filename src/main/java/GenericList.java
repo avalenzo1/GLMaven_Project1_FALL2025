@@ -4,7 +4,9 @@ import java.util.Iterator;
 public abstract class GenericList<T> implements Iterable<T> {
     private Node<T> head;
     private int length;
+    public abstract void add(T data);
 
+    public abstract T delete();
     public static class Node<T> {
         T data;
         int code;
@@ -27,9 +29,7 @@ public abstract class GenericList<T> implements Iterable<T> {
         }
     }
 
-    public abstract void add(T data);
 
-    public abstract T delete();
 
     public ArrayList<T> dumpList() {
         ArrayList<T> list = new ArrayList<>();
