@@ -31,8 +31,6 @@ public class GLProject {
         testingList.add("c");
         testingList.add("d");
 
-        GenericList<T>
-
         // TODO Test for both for loop and while loop
     }
 }
