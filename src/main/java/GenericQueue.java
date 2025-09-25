@@ -29,11 +29,6 @@ public class GenericQueue<T> extends GenericList<T> {
         return tempHead.data;
     }
 
-    @Override
-    public Iterator<T> iterator() {
-        return null;
-    }
-
     public void enqueue(T data){
         add(data);
     }
