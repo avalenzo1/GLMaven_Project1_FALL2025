@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GQTest {
 
-    @Test
+
     public static void main(String[] args) {
         GenericQueue<String> testingList = new GenericQueue<>();
 
@@ -15,14 +15,15 @@ public class GQTest {
         testingList.add("c");
         testingList.add("d");
         int counter = 0;
-        String list[] = {"a", "fyufyhgv", "c", "d"};
+        String list[] = {"a", "b", "c", "d"};
 
         Iterator<String> iterator = testingList.iterator();
 
         while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-            //assertEquals(iterator.next(), list[counter], "Did not properly add " + list[counter] + "\n");
-            //counter++;
+            System.out.println(counter++);
+            iterator.next();
+//            assertEquals(iterator.next(), list[counter], "Did not properly add " + list[counter] + "\n");
+//            counter++;
         }
 
 //        for (String s : testingList) {

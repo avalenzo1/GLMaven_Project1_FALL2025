@@ -9,7 +9,8 @@ public class GLLIterator<T> implements Iterator<T> {
 
     @Override
     public boolean hasNext() {
-        return current.next != null;
+
+        return current != null;
     }
 
     @Override
