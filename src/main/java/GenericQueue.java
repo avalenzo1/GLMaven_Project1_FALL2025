@@ -34,5 +34,10 @@ public class GenericQueue<T> extends GenericList<T> {
         return null;
     }
 
-
+    public void enqueue(T data){
+        add(data);
+    }
+    public T dequeue(){
+        return delete();
+    }
 }
