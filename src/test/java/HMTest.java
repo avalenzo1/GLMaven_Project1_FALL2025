@@ -1,5 +1,5 @@
 public class HMTest {
     HMTest() {
-        System.out.println("GQTest");
+        System.out.println("HMTest");
     }
 }

@@ -88,6 +88,10 @@ public abstract class GenericList<T> implements Iterable<T> {
         this.head = head;
     }
 
+    public Iterator<T> iterator() {
+        return new GLLIterator<>(getHead());
+    }
+
     public Iterator<T> descendingIterator() {
         return new ReverseGLLIterator<T>(getHead());
     }
