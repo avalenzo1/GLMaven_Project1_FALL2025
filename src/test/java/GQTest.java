@@ -19,9 +19,10 @@ public class GQTest {
 
         Iterator<String> iterator = testingList.iterator();
 
+
+        // Have to test both while and for loop iteration.
         while (iterator.hasNext()) {
-            System.out.println(counter++);
-            iterator.next();
+            System.out.println(iterator.next());
 //            assertEquals(iterator.next(), list[counter], "Did not properly add " + list[counter] + "\n");
 //            counter++;
         }

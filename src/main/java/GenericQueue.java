@@ -9,10 +9,14 @@ public class GenericQueue<T> extends GenericList<T> {
         newNode.data = data;
         if(getLength()==0){
             setHead(newNode);
+            tail = newNode;
         }
         else{
             tail.next = newNode;
+            tail = newNode;
         }
+
+        setLength(getLength()+1);
     }
 
     @Override
