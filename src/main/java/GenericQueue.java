@@ -7,29 +7,30 @@ public class GenericQueue<T> extends GenericList<T> {
     public void add(T data) {
         Node<T> newNode = new Node<T>();
         newNode.data = data;
-        if(getLength()==0){
+
+        if (getLength()==0) {
             setHead(newNode);
-            tail = newNode;
         }
         else{
             tail.next = newNode;
-            tail = newNode;
         }
+
+        tail = newNode;
 
         setLength(getLength()+1);
     }
 
     @Override
     public T delete() {
-        Node<T> tempHead = new Node<T>();
+        Node<T> tempHead = getHead();
 
         if(getLength() == 0) {
             return null;
         }
-        else{
-           tempHead = getHead();
-           setHead(tempHead.next);
-        }
+
+       setHead(tempHead.next);
+        setLength(getLength()-1);
+
         return tempHead.data;
     }
 
