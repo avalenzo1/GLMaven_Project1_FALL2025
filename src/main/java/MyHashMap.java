@@ -3,17 +3,25 @@ import java.util.Iterator;
 
 public class MyHashMap<T> implements Iterable<T> {
     ArrayList<GenericQueue<T>> map;
-    int size;
 
     MyHashMap(String key, T value) {
-        map = new ArrayList<>();
-        size = 10;
+        map = new ArrayList<>(); // initialize map with 10 spots
+
+        for (int i = 0; i < 10; i++) {
+            map.add(new GenericQueue<T>());
+        }
+
+        System.out.println(map.size());
 
         put(key, value);
     }
 
     void put(String key, T value) {
-        key.hashCode();
+        int code = key.hashCode();
+
+        GenericQueue<T> gq = map.get(code & 9);
+
+        gq.enqueue(value);
     }
 
     @Override
@@ -24,6 +32,12 @@ public class MyHashMap<T> implements Iterable<T> {
     // this method will check to see if the given key exists in
     // the HashMap and return true if yes and false if no.
     public boolean contains(String key) {
+        int code = key.hashCode();
+
+        GenericQueue<T> gq = map.get(code & 9);
+
+//        gq.get(code);
+
         return false;
     }
 
