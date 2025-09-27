@@ -8,7 +8,7 @@ public class MyHashMap<T> implements Iterable<T> {
         map = new ArrayList<>(); // initialize map with 10 spots
 
         for (int i = 0; i < 10; i++) {
-            map.add(new GenericQueue<T>());
+            map.add(null);
         }
 
         System.out.println(map.size());
@@ -21,7 +21,11 @@ public class MyHashMap<T> implements Iterable<T> {
 
         GenericQueue<T> gq = map.get(code & 9);
 
-        gq.enqueue(value);
+        if (gq == null) {
+            gq = new GenericQueue<>();
+        }
+
+        gq.add(value, code);
     }
 
     @Override
@@ -36,16 +40,21 @@ public class MyHashMap<T> implements Iterable<T> {
 
         GenericQueue<T> gq = map.get(code & 9);
 
-//        gq.get(code);
-
-        return false;
+        return gq != null;
     }
 
     // this method will return the value at the given key or return null if
     // it does not exist.
     public T get(String key) {
+        int code = key.hashCode();
+
+        GenericQueue<T> gq = map.get(code & 9);
+
+        
+
         return null;
     }
+
 
     // returns the number of key-value mappings in the map.
     public int size() {
@@ -60,6 +69,10 @@ public class MyHashMap<T> implements Iterable<T> {
     // replaces the entry for the specified key only if it is
     // currently mapped to some value.
     public T replace(String key, T value) {
+        return null;
+    }
+
+    public T add(String key, T value) {
         return null;
     }
 

@@ -20,6 +20,11 @@ public class GenericQueue<T> extends GenericList<T> {
         setLength(getLength()+1);
     }
 
+    public void add(T data, int code) {
+        add(data);
+        getHead().code = code;
+    }
+
     @Override
     public T delete() {
         Node<T> tempHead = getHead();

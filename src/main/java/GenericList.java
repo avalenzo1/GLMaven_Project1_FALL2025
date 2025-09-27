@@ -43,7 +43,8 @@ public abstract class GenericList<T> implements Iterable<T> {
         return list;
     }
 
-    public T get( int index) {
+
+    public T get(int index) {
       Node<T> tempNode = head;
         for(int i = 0; i < index; i++) {
             if (tempNode == null) {
