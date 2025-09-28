@@ -3,15 +3,20 @@ import java.util.Iterator;
 
 public class ReverseGLLIterator<T> implements Iterator<T> {
         private ArrayList<T> list;
-        private int index = list.size() - 1;
+        private int index;
 
         ReverseGLLIterator(GenericList.Node<T> head) {
             // Create new iterator
             GLLIterator<T> gllIterator = new GLLIterator<>(head);
 
+            list = new ArrayList<>();
+
             while (gllIterator.hasNext()) {
                 list.add(gllIterator.next());
             }
+
+            index = list.size() - 1;
+
         }
 
         @Override

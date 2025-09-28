@@ -28,9 +28,7 @@ public abstract class GenericList<T> implements Iterable<T> {
             temp = temp.next;
         }
     }
-
-
-
+    
     public ArrayList<T> dumpList() {
         ArrayList<T> list = new ArrayList<>();
 
@@ -58,7 +56,6 @@ public abstract class GenericList<T> implements Iterable<T> {
 
     public T set(int index, T element) {
         Node<T> tempNode = head;
-        T oldElement = tempNode.data;
 
         for(int i = 0; i < index; i++) {
             if (tempNode == null) {
@@ -68,6 +65,7 @@ public abstract class GenericList<T> implements Iterable<T> {
             tempNode = tempNode.next;
         }
 
+        T oldElement = tempNode.data;
         tempNode.data = element;
 
         return oldElement;
@@ -77,7 +75,7 @@ public abstract class GenericList<T> implements Iterable<T> {
         return length;
     }
 
-    public void setLength(int length) {
+    protected void setLength(int length) {
         this.length = length;
     }
 
@@ -85,9 +83,7 @@ public abstract class GenericList<T> implements Iterable<T> {
         return head;
     }
 
-    public void setHead(Node<T> head) {
-
-
+    protected void setHead(Node<T> head) {
         this.head = head;
     }
 
