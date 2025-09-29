@@ -10,26 +10,5 @@ public class GLProject {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("Welcome to project 1");
-        GenericList<String> testingList = new GenericList<String>() {
-            @Override
-            public void add(String data) {
-
-            }
-
-            @Override
-            public String delete() {
-                return "";
-            }
-
-            @Override
-            public Iterator<String> iterator() {
-                return null;
-            }
-        };
-        testingList.add("a");
-        testingList.add("b");
-        testingList.add("c");
-        testingList.add("d");
-
     }
 }
