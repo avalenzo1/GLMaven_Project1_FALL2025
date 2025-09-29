@@ -41,16 +41,10 @@ public class HMTest {
         myHashMap.put("key3", "Value13");
         myHashMap.put("key3", "Value14");
 
-//        for (String s : myHashMap) {
-//            System.out.println(s);
-//        }
-
         HMIterator<String> hmIterator = new HMIterator<>(myHashMap);
         while (hmIterator.hasNext()) {
             System.out.println(hmIterator.next());
         }
-
-
     }
 
     HMTest() {
