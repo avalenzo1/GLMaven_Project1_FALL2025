@@ -31,6 +31,5 @@ public class GLProject {
         testingList.add("c");
         testingList.add("d");
 
-        // TODO Test for both for loop and while loop
     }
 }

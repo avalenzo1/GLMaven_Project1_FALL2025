@@ -21,6 +21,7 @@ public class ReverseGLLIterator<T> implements Iterator<T> {
 
         @Override
         public boolean hasNext() {
+            // returns true if in-bounds
             return index >= 0;
         }
 
@@ -28,6 +29,7 @@ public class ReverseGLLIterator<T> implements Iterator<T> {
         public T next() {
             T next = null;
 
+            // store old item to next
             if (index >= 0) {
                 next = list.get(index);
             }
